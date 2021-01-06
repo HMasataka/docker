@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8.0.22
+    container_name: mysql8
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: test
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4
+    volumes:
+      - ./initialize:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
