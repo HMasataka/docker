@@ -1,4 +1,4 @@
-version: '3'
+version: "3.9"
 
 services:
   mysql:
@@ -9,7 +9,7 @@ services:
       MYSQL_DATABASE: test
       MYSQL_USER: user
       MYSQL_PASSWORD: pass
-      TZ: 'Asia/Tokyo'
+      TZ: "Asia/Tokyo"
     command: mysqld --character-set-server=utf8mb4
     volumes:
       - ./initialize:/docker-entrypoint-initdb.d
